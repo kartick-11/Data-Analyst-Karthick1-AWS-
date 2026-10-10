@@ -2,6 +2,31 @@
 
 This portfolio highlights a series of data analytics projects aimed at analyzing Vancouver parks' usage and trends. The projects make use of advanced AWS services to ensure secure data storage, processing, analysis, and visualization, while providing valuable insights for city planners and stakeholders. Each project focuses on different aspects of park data and integrates AWS tools for scalable, efficient, and insightful data management.
 
+
+## At a glance
+
+| # | Project | Question it answers | Main AWS services |
+| --- | --- | --- | --- |
+| 1 | Exploratory analysis | What patterns exist in park use, amenities and location? | S3, Glue, Athena, SageMaker |
+| 2 | Descriptive analysis | How do visitor numbers vary with size, season, weather and events? | S3, Glue DataBrew, Athena |
+| 3 | Diagnostic analysis | Why are visitor numbers falling at some parks? | S3, Glue, Athena, SageMaker |
+| 4 | Data quality control | Is the park data complete and accurate? | S3, Glue, Athena, Elasticsearch |
+| 5 | Data wrangling | How do we prepare raw park, weather and event data? | S3, Data Pipeline, Glue, DataBrew |
+
+## Shared architecture
+
+```mermaid
+flowchart LR
+    A[Raw park, weather<br/>and event data] --> B[Amazon S3]
+    B --> C[AWS Data Pipeline]
+    C --> D[AWS Glue +<br/>Glue DataBrew]
+    D --> E[Amazon Athena]
+    E --> F[Amazon SageMaker]
+    G[AWS KMS<br/>encryption] -.-> B
+    H[AWS CloudTrail<br/>audit] -.-> B
+    I[Amazon CloudWatch<br/>monitoring] -.-> C
+```
+
 ---
 
 ## **1. Exploratory Data Analysis (EDA) on Vancouver Parks Data**  
@@ -193,7 +218,7 @@ To further explore the methodologies and tools utilized in these projects, refer
 2. **Data Profiling**: Understand data structure and anomalies.  
 3. **Data Cleaning**: Ensure data quality and consistency.  
 4. **Pipeline Design**: Automate data transformation and movement.  
-*For a detailed guide on implementing descriptive analysis, refer to the full [CC - Part 1.docx](https://github.com/kartick-11/Data-Analyst-Kar/raw/main/CC%20-%20Part%201.docx) document.*
+*For a detailed guide on implementing descriptive analysis, refer to the full [CC - Part 1.docx](https://github.com/kartick-11/Data-Analyst-Karthick1/raw/main/CC%20-%20Part%201.docx) document.*
 
 ### **Exploratory Analysis**  
 1. **Data Enriching**: Integrate external data like weather or events.  
@@ -205,7 +230,7 @@ To further explore the methodologies and tools utilized in these projects, refer
 6. **Data Protection**: Secure data with encryption and access controls.  
 7. **Data Governance**: Establish policies for compliance and accuracy.  
 8. **Data Observability**: Monitor pipelines to ensure performance.  
-*For more insights on advanced processes, refer to the [CC - Part 2.docx](https://github.com/kartick-11/Data-Analyst-Kar/raw/main/CC%20-%20Part2.docx) document.*
+*For more insights on advanced processes, refer to the [CC - Part 2.docx](https://github.com/kartick-11/Data-Analyst-Karthick1/raw/main/CC%20-%20Part%202.docx) document.*
 
 ---
 
